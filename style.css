@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Nav-header {
+    background-color:  #1A1A1A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.nav-searchBar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 32px;
+    width: 40%;
+    background-color: #303030;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid gray;
+}
+
+.search-input {
+    outline: none;
+    border: none;
+    background: transparent;
+    color: white;
+    height: 100%;
+}
+
+.nav-collection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-collection .notification {
+    background: #303030;
+    border-radius: 5px;
+    padding: 2px;
+    position: relative;
+    width: 40px;
+    height: 31px;
+}
+
+.nav-collection .notification .notification-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-collection .collection-input__container {
+    background: #303030;
+    height: 32px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.nav-collection .collection-input__container .collection-btn {
+    background: #36FBA1;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.collection-input__container {
+    position: relative;
+    display: inline-block;
+}
+
+.collection-input {
+    padding: 8px;
+    background: transparent;
+    border: none;
+    outline: none;
+    height: 100%;
+    color: white;
+    padding-left: 10px;
+}
+
+.collection-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background: white;
+    width: 100%;
+}
+
+.collection-dropdown-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    /* Styles for small screens */
+
+    .collection-dropdown {
+        display: block;
+        max-width: 200px; /* Set a maximum width for the dropdown */
+        width: auto; /* Allow the width to adjust based on content */
+        margin-top: 8px; /* Slightly displace from the top */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a bit of box-shadow */
+    }
+
+    .collection-input {
+        display: none; /* Hide the input field on small screens */
+    }
+}
+
+
+
+
+.nav-log img {
+    display: none; /* Hide both images by default */
+}
+
+@media (min-width: 768px) {
+    /* Show the first image on larger screens (768px and above) */
+    .nav-log img:first-child {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Show the second image on smaller screens (767px and below) */
+    .nav-log img:last-child {
+        display: block;
+    }
+}
+
+.collection-input {
+    display: block; /* Show the input field by default */
+}
+
+@media (max-width: 767px) {
+    /* Hide the input field on smaller screens (767px and below) */
+    .collection-input {
+        display: none;
+    }
+}
+
+.main-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
