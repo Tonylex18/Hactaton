@@ -4,8 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background: #DBDBDB;
+}
+
 .Nav-header {
-    background-color:  #1A1A1A;
+    background-color: #1A1A1A;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,12 +30,17 @@
     border: 1px solid gray;
 }
 
+.nav-searchBar .search-icon {
+    margin-top: 5px;
+}
+
 .search-input {
     outline: none;
     border: none;
     background: transparent;
     color: white;
     height: 100%;
+    width: 100%;
 }
 
 .nav-collection {
@@ -86,7 +97,7 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     z-index: 1;
     background: white;
     width: 100%;
@@ -102,14 +113,15 @@
 
     .collection-dropdown {
         display: block;
-        max-width: 200px; /* Set a maximum width for the dropdown */
-        width: auto; /* Allow the width to adjust based on content */
-        margin-top: 8px; /* Slightly displace from the top */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a bit of box-shadow */
+        max-width: 200px;
+        width: auto;
+        margin-top: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     .collection-input {
-        display: none; /* Hide the input field on small screens */
+        display: none;
+        /* Hide the input field on small screens */
     }
 }
 
@@ -117,10 +129,12 @@
 
 
 .nav-log img {
-    display: none; /* Hide both images by default */
+    display: none;
+    /* Hide both images by default */
 }
 
 @media (min-width: 768px) {
+
     /* Show the first image on larger screens (768px and above) */
     .nav-log img:first-child {
         display: block;
@@ -128,6 +142,7 @@
 }
 
 @media (max-width: 767px) {
+
     /* Show the second image on smaller screens (767px and below) */
     .nav-log img:last-child {
         display: block;
@@ -135,11 +150,11 @@
 }
 
 .collection-input {
-    display: block; /* Show the input field by default */
+    display: block;
+    /* Show the input field by default */
 }
 
 @media (max-width: 767px) {
-    /* Hide the input field on smaller screens (767px and below) */
     .collection-input {
         display: none;
     }
@@ -147,5 +162,254 @@
 
 .main-section {
     max-width: 900px;
+    width: auto;
     margin: 0 auto;
+    margin-top: 50px;
+}
+
+.banner {
+    background: #1A1A1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        border-radius: 0px;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.banner p {
+    color: #E3E3E3;
+    font-size: 13px;
+    line-height: 18.2px;
+    font-weight: 500;
+}
+
+.banner .banner-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.banner .banner-button>:first-child {
+    background: #E3E3E3;
+    color: #000;
+    border: none;
+    outline: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15.6px;
+}
+
+.banner .banner-button>:last-child {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .banner .banner-button>:last-child {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+.setUp__guide {
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 10px 20px;
+    border: 1px solid #DBDBDB;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .setUp__guide {
+        border-radius: 0;
+    }
+}
+
+.setUp__guide .heading .text h2 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 19.6px;
+    color: #303030;
+}
+
+.setUp__guide .heading .text p,
+.setUp__guide .heading .progress-container p {
+    line-height: 18.2px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #303030;
+}
+
+@media screen and (max-width: 768px) {
+    .setUp__guide .heading .text p {
+        width: 80%;
+    }
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 10%;
+    height: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #303030;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.dropdown-item {
+    top: 10px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 2px;
+    transition: all .5s;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.dropdown-item:hover {
+    background-color: #E3E3E3;
+}
+
+.setUp__guide-body {
+    display: none;
+}
+
+/* Show the guide body when it has the visible class */
+.setUp__guide-body.visible {
+    display: block;
+}
+
+.setUp__guide-body {
+    margin-top: 30px;
+    border-radius: 8px;
+    height: auto;
+    width: Fill (784px);
+}
+
+.setUp__guide-body .card-1,
+.setUp__guide-body .card-2,
+.setUp__guide-body .card-3,
+.setUp__guide-body .card-4,
+.setUp__guide-body .card-5 {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    justify-content: space-between;
+    background: rgba(243, 243, 243, 1);
+    margin-top: 20px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    gap: 96px;
+}
+
+.setUp__guide-body .card-1 .loader,
+.setUp__guide-body .card-2 .loader,
+.setUp__guide-body .card-3 .loader,
+.setUp__guide-body .card-4 .loader,
+.setUp__guide-body .card-5 .loader {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+}
+
+.setUp__guide-body .card-1 .text,
+.setUp__guide-body .card-2 .text,
+.setUp__guide-body .card-3 .text,
+.setUp__guide-body .card-4 .text,
+.setUp__guide-body .card-5 .text {
+    line-height: 18.2px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #303030;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.setUp__guide-body .card-1 .text a,
+.setUp__guide-body .card-2 .text a,
+.setUp__guide-body .card-3 .text a,
+.setUp__guide-body .card-4 .text a,
+.setUp__guide-body .card-5 .text a {
+    text-decoration: none;
+}
+
+.setUp__guide-body .card-1 .text button,
+.setUp__guide-body .card-2 .text button,
+.setUp__guide-body .card-3 .text button,
+.setUp__guide-body .card-4 .text button,
+.setUp__guide-body .card-5 .text button {
+    width: fit-content;
+    background: #333333;
+    padding: 8px 7px;
+    border-radius: 8px;
+    color: #E3E3E3;
+    border-width: 1.5px, 1.5px, 0px, 1.5px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 0px 1.5px rgba(51, 51, 51, 1);
+    box-shadow: 0px 1px 0px 1.5px rgba(51, 51, 51, 1);
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+
+.setUp__guide-body .card-1 .image,
+.setUp__guide-body .card-2 .image,
+.setUp__guide-body .card-3 .image,
+.setUp__guide-body .card-4 .image,
+.setUp__guide-body .card-5 .image {
+    flex: 0 1;
+}
+
+@media screen and (max-width: 768px) {
+
+    .setUp__guide-body .card-1 .image,
+    .setUp__guide-body .card-2 .image,
+    .setUp__guide-body .card-3 .image,
+    .setUp__guide-body .card-4 .image,
+    .setUp__guide-body .card-5 .image {
+        display: none;
+    }
+}
+
+.container .icon {
+    cursor: pointer;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
 }
