@@ -42,38 +42,32 @@ var progressBar = document.getElementById("myProgressBar");
 progressBar.style.width = progressValue + "%";
 
 function toggleGuideBody() {
-  const guideBody = document.querySelector(".setUp__guide-body");
-  const closedIcon = document.querySelector(".icon-closed");
-  const openedIcon = document.querySelector(".icon-opened");
+    // Toggle the visibility of the guide body
+    const guideBody = document.querySelector('.setUp__guide-body');
+    guideBody.classList.toggle('visible');
 
-  guideBody.classList.toggle("visible");
+    // Toggle the classes on the open and close icons
+    const closedIcon = document.querySelector('.icon-closed');
+    const openedIcon = document.querySelector('.icon-opened');
 
-  if (guideBody.classList.contains("visible")) {
-    // Guide body is visible, show opened icon and hide closed icon
-    closedIcon.style.display = "none";
-    openedIcon.style.display = "inline-block";
-  } else {
-    // Guide body is hidden, show closed icon and hide opened icon
-    closedIcon.style.display = "inline-block";
-    openedIcon.style.display = "none";
-  }
+    if (guideBody.classList.contains('visible')) {
+        // Guide body is visible, add the class for the opened icon and remove the class for the closed icon
+        closedIcon.classList.remove('active');
+        openedIcon.classList.add('active');
+    } else {
+        // Guide body is hidden, add the class for the closed icon and remove the class for the opened icon
+        closedIcon.classList.add('active');
+        openedIcon.classList.remove('active');
+    }
 }
+
+
 
 // Function to change state for a specific card
 
 var currentState = "prestate"; // Initial state
 
-function toggleContent() {
-  // Call the changeState function with the card ID (1 in this case)
-  changeState(1);
-
-  // Toggle the visibility of the text content
-  const textContent = document.querySelector(".text");
-  textContent.classList.toggle("show");
-}
-
 function changeState(cardId) {
-  // Your existing changeState function
   var prestateIcon = document.querySelector(`.card-${cardId} .prestate`);
   var loadingIcon = document.querySelector(`.card-${cardId} .loading`);
   var completedIcon = document.querySelector(`.card-${cardId} .completed`);
@@ -104,3 +98,4 @@ function changeState(cardId) {
     }, 500); // Adjust the duration (in milliseconds) as needed
   }
 }
+
